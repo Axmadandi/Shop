@@ -1,0 +1,10 @@
+{% extends '../main.html' %}
+{% load static %}
+{% block content %}
+<br>
+	<center><h2><form action="" method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Kirish" next="{{next}}">
+	</form></h2></center>
+{% endblock %}

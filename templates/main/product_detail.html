@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<div class="shadow p-3 mb-5 bg-white rounded" style="width: 750px; margin-left: 160px;">
+  <div class="row no-gutters">
+    <div class="col-md-6">
+      <img src="{{object.image.url}}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <h3 class="card-title">{{object.name}}</h3>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th width="160" class="th-label">Turi:</th>
+              <td>{{object.m_type}}</td>
+            </tr>
+            <tr>
+              <th width="160" class="th-label">Narxi:</th>
+              <td>$ {{object.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <center>
+          <button data-product={{object.id}} data-action="add" class="btn btn-outline-success add-btn update-cart">Savatga qo'shish</button>
+        
+            {% if messages %}
+          {% for x in messages %}  <br>
+            <center><strong>{{x}}</strong></center>
+          {% endfor %}
+        {% endif %}
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
